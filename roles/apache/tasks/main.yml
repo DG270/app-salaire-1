@@ -25,6 +25,11 @@
     service: http
     permanent: yes
     state: enabled
+    
+ - name: reload firewall
+   systemd:
+    firewalld: http
+    state: reloaded
 
 - name: restart and enable systemd apache service
   systemd:
